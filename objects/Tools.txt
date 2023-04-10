@@ -1,0 +1,9 @@
+shuffle:
+https://stackoverflow.com/questions/75545550/how-to-shuffle-a-vector-of-objects-in-c
+
+vector:
+https://www.geeksforgeeks.org/vector-in-cpp-stl/
+
+Card class in c++:
+https://www.youtube.com/watch?v=f5vvgHX9coI
+https://www.youtube.com/watch?v=JF6RDcXnVKI
