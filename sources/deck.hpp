@@ -12,11 +12,12 @@ namespace ariel{}
 class Deck
 {
     private:
-        vector<Card> deckOfCards_;
+        vector<Card> deckOfCards_; // vector that holds the main deck of cards
 
 
     public:
 
+        // constructor
         Deck();
         
         vector<Card> getDeckOfCards() const;

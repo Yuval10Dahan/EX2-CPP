@@ -80,7 +80,7 @@ void Game::playTurn()
         // add the used card of p1 to the pile
         Card card1 = this->one_.useCard();
 
-        // this card needed for printing, therefore true
+        // this card needed for printing, therefore true in the second field of the struct
         this->pile_.push_back( {card1, true, name1, false} );
 
         // add the used card of p2 to the pile
@@ -99,8 +99,18 @@ void Game::playTurn()
         // there is enough cards for draw - no need to set the draw flag
         else
         {
-            // this card needed for printing, therefore true
-            this->pile_.push_back( {card2, true, name2, false} );
+            // if it's a draw then the draw flag set to true
+            if(gameCase == 0)
+            {
+                this->pile_.push_back( {card2, true, name2, true} );
+            }
+            
+            // set the draw flag to false
+            else
+            {
+                // this card needed for printing, therefore true. the draw flag set to false
+                this->pile_.push_back( {card2, true, name2, false} );
+            }
         }
         // -----------------------------------------------------------------------------
 
@@ -153,7 +163,7 @@ void Game::playTurn()
                     Card del1 = this->one_.useCard();
                     Card del2 = this->two_.useCard();
 
-                    // those cards are useless for printing, therefore false
+                    // those cards are useless for printing, therefore false in the second field of the struct
                     this->pile_.push_back( {del1, false, name1, false} );
                     this->pile_.push_back( {del2, false, name2, false} );
 
@@ -176,8 +186,8 @@ void Game::playTurn()
                     // use this cards to continue the war and add them to the pile
                     Card temp1 = this->one_.useCard();
                     Card temp2 = this->two_.useCard();
-                    // those card needed for printing, therefore true
-                    this->pile_.push_back( {temp1, true, name1, true} );
+                    // those card needed for printing, therefore true in the second field of the struct
+                    this->pile_.push_back( {temp1, true, name1, false} );
                     this->pile_.push_back( {temp2, true, name2, false} );
 
                     // check which card is the higher card, or if it is a draw
@@ -210,6 +220,12 @@ void Game::playTurn()
                     // draw again
                     else
                     {
+                        // erase temp2(the last element in the pile)
+                        this->pile_.pop_back();
+
+                        // push temp2 again but with the draw flag set to true
+                        this->pile_.push_back( {temp2, true, name2, true} );
+                        
                         // set it to true to continue the while loop
                         stillDraw = true;
                     }
