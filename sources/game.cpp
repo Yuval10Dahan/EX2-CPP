@@ -256,11 +256,20 @@ void Game::printLastTurn()
 // this method makes the players to play turns until there isn't cards left
 void Game::playAll()
 {
-    // if the players has cards left in their stack - continue to play a turn
-    while( (this->one_.stacksize() > 0) && (this->two_.stacksize() > 0) )
+    // the code wrap with try-catch in order to catch exceptions
+    try
     {
-        this->playTurn();
+        // if the players has cards left in their stack - continue to play a turn
+        while( (this->one_.stacksize() > 0) && (this->two_.stacksize() > 0) )
+        {
+            this->playTurn();
+        }
     }
+
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }  
 }
 
 // this method prints the name of the winner in the current game

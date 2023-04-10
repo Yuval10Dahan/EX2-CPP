@@ -102,9 +102,9 @@ int main()
 {
     Player p1("Alice");
     Player p2("Bob");
-    Deck d();
+    
 
-    Game game(p1,p2); 
+    Game game(p1,p1); 
 
     game.playTurn();
 

@@ -35,12 +35,6 @@ int Player::getNumOfDraws() const
     return this->numOfDraws_;
 }
 
-// // getter method for the "stackOfCards" data member
-// vector<Card>& Player::getPlayerStack() 
-// {
-//     return this->stackOfCards_;
-// }
-
 
 // ### Setters ###
 
@@ -55,19 +49,6 @@ void Player::increaseNumOfDraws()
 {
     this->numOfDraws_++;
 }
-
-// // set the "wonCards" data member to zero
-// void Player::resetWonCards()
-// {
-//     this->wonCards_ = 0;
-// }
-
-// // set the "numOfDraws" data member to zero
-// void Player::resetnumOfDraws()
-// {
-//     this->numOfDraws_ = 0;
-// }
-
 
 
 // this method return the win rate in percentage
@@ -111,14 +92,23 @@ double Player::drawRate()
 // this method print a single player statistics 
 void Player::printPlayerStats()
 {
-    cout << "#################################################" << endl;
+    // the code wrap with try-catch in order to catch exceptions
+    try
+    {
+        cout << "#################################################" << endl;
 
-    // print player name, won cards, win rate, number of draws and draw rate
-    cout << "Player name: " << this->name_ << endl;
-    cout << "Cards won: " << to_string(this->wonCards_) << endl;
-    cout << "Win rate: " << to_string(this->winRate()) << endl;
-    cout << "Number of draws: " << to_string(this->numOfDraws_) << endl;
-    cout << "Draw rate: " << to_string(this->drawRate()) << endl;
+        // print player name, won cards, win rate, number of draws and draw rate
+        cout << "Player name: " << this->name_ << endl;
+        cout << "Cards won: " << to_string(this->wonCards_) << endl;
+        cout << "Win rate: " << to_string(this->winRate()) << endl;
+        cout << "Number of draws: " << to_string(this->numOfDraws_) << endl;
+        cout << "Draw rate: " << to_string(this->drawRate()) << endl;
+    }
+
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
 
 // this method adds a specific card to the player own deck of cards
