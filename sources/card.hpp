@@ -3,6 +3,8 @@
 #include <string>
 
 using namespace std;
+
+namespace ariel{}
     
     // enum that holds the card type of numbers
     enum class CardNumbers

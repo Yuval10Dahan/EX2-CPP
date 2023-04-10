@@ -8,6 +8,8 @@
 
 using namespace std;
 
+namespace ariel{}
+
 // struct that contains a card and other information, the struct added to the pile
 typedef struct Element
 {
