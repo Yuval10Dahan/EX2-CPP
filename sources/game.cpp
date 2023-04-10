@@ -266,7 +266,7 @@ void Game::playAll()
 // this method prints the name of the winner in the current game
 void Game::printWiner()
 {
-    // the code wrap with try-catch in order to catch exceptions in initialization
+    // the code wrap with try-catch in order to catch exceptions
     try
     {
         cout << "#################################################" << endl; 
@@ -308,25 +308,43 @@ void Game::printWiner()
 // this method prints all the turns played one line per turn
 void Game::printLog()
 {   
-    cout << "#################################################" << endl; 
-    cout << "Print Log: " << endl;   
-    cout << "Number of Turns: " << this->turnsData_.size() << endl;
-
-    // loop through the vector and printed the turns from start to finish
-    for(string turn : this->turnsData_)
+    // throw exception if no turns have occurred yet
+    if(this->turnsData_.empty() == true)
     {
-        cout << turn << endl;
+        throw logic_error("No turns have occurred yet\n");
+    }
+
+    else
+    {    
+        cout << "#################################################" << endl; 
+        cout << "Print Log: " << endl;   
+        cout << "Number of Turns: " << this->turnsData_.size() << endl;
+
+        // loop through the vector and printed the turns from start to finish
+        for(string turn : this->turnsData_)
+        {
+            cout << turn << endl;
+        }
     }
 }
 
 // this method print each player his basic statistics: win rate, cards won, draw rate and amount of draws that happened
 void Game::printStats()
 {
-    cout << "#################################################" << endl;
-    cout << "Players Stats: " << endl;
-    // use the printing method in class Player for each of the players
-    this->one_.printPlayerStats();
-    this->two_.printPlayerStats();
+    // the code wrap with try-catch in order to catch exceptions
+    try
+    {
+        cout << "#################################################" << endl;
+        cout << "Players Stats: " << endl;
+        // use the printing method in class Player for each of the players
+        this->one_.printPlayerStats();
+        this->two_.printPlayerStats();
+    }
+
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }
 
 // this method return a number that represent which player 
