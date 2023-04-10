@@ -104,9 +104,13 @@ using namespace std;
 //     Player p2("Bob");
     
 
-//     Game game(p1,p1); 
+//     Game game(p1,p2); 
 
 //     game.playTurn();
+//     game.playTurn();
+//     game.printLog();
+
+//     game.printWiner();
 
 // }
 
