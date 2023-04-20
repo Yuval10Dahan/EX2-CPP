@@ -1,11 +1,12 @@
 make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/yuval/Documents/EX2-CPP'
+make: Entering directory '/home/yuval/Documents/EX2B-CPP'
 clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile TestRunner.cpp -o TestRunner.o
 clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile StudentTest1.cpp -o StudentTest1.o
 clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/card.cpp -o objects/card.o
 clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/deck.cpp -o objects/deck.o
 clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/game.cpp -o objects/game.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/myMainTest.cpp -o objects/myMainTest.o
 clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/player.cpp -o objects/player.o
-clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources TestRunner.o StudentTest1.o objects/card.o objects/deck.o objects/game.o objects/player.o -o test1
-make: Leaving directory '/home/yuval/Documents/EX2-CPP'
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources TestRunner.o StudentTest1.o objects/card.o objects/deck.o objects/game.o objects/myMainTest.o objects/player.o -o test1
+make: Leaving directory '/home/yuval/Documents/EX2B-CPP'
  

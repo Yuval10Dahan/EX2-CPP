@@ -1,7 +1,7 @@
 #include "card.hpp"
 using namespace std;
 
-
+ 
 // Constructor
 Card::Card(CardNames nameOfCard, CardNumbers num) : name_(nameOfCard), number_(num){}
 

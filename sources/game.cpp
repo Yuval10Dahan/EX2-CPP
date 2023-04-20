@@ -391,7 +391,10 @@ int Game::betterCard(const Card &card1, const Card &card2)
         {
             result = 2;
         }
-        result = 1;
+        else
+        {
+            result = 1;
+        }
     }
     
     // p2 has a higher card
@@ -402,7 +405,10 @@ int Game::betterCard(const Card &card1, const Card &card2)
         {
             result = 1;
         }
-        result = 2;
+        else
+        {
+            result = 2;
+        }
     }
 
     return result;
